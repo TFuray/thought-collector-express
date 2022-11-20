@@ -14,5 +14,12 @@ app.engine(
     'handlebars',
     engine({
         extname:'hbs',
+        layoutsDir: './views/layouts',
+        defaultLayout: 'main',
     })
 )
+app.set('view engine', 'handlebars')
+app.set('views', './views')
+
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
